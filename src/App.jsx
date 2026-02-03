@@ -3,6 +3,7 @@ import "./App.css";
 
 import HeroSection from "./components/HeroSection/HeroSection";
 import ModalHero from "./components/ModalHero/ModalHero";
+import Footer from "./components/FooterSection/Footer";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -15,6 +16,7 @@ function App() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
+    <Footer/>
     </>
   );
 }
