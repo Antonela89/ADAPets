@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-     <Navbar />
+
 
       <HeroSection onOpenModal={() => setIsModalOpen(true)} />
 
