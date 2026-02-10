@@ -46,7 +46,7 @@ const ModalHelp = ({ isOpen, onClose }) => {
         onClick={onClose}
       />
 
-      <div className="relative bg-vet-bg w-full md:w-[400px] h-[85vh] md:h-[600px] flex flex-col rounded-t-2xl md:rounded-2xl shadow-2xl animate-fade-in-up overflow-hidden">
+      <div className="relative bg-vet-bg w-full md:w-100 h-[85vh] md:h-150 flex flex-col rounded-t-2xl md:rounded-2xl shadow-2xl animate-fade-in-up overflow-hidden">
         {/* HEADER */}
         <div className="flex items-center justify-between p-4 bg-vet-primary text-white shadow-md z-10">
           <div className="flex items-center gap-3">

@@ -53,7 +53,11 @@ const Navbar = ({ onOpenModal }) => {
                   className={`
                     absolute inset-0 w-5 h-5 text-vet-text
                     transition-all duration-500
-                    ${isDark ? "rotate-90 opacity-0 scale-0" : "rotate-0 opacity-100 scale-100"}
+                    ${
+                      isDark
+                        ? "rotate-90 opacity-0 scale-0"
+                        : "rotate-0 opacity-100 scale-100"
+                    }
                   `}
                   fill="none"
                   viewBox="0 0 24 24"
@@ -69,7 +73,11 @@ const Navbar = ({ onOpenModal }) => {
                   className={`
                     absolute inset-0 w-5 h-5 text-vet-text
                     transition-all duration-500
-                    ${isDark ? "rotate-0 opacity-100 scale-100" : "-rotate-90 opacity-0 scale-0"}
+                    ${
+                      isDark
+                        ? "rotate-0 opacity-100 scale-100"
+                        : "-rotate-90 opacity-0 scale-0"
+                    }
                   `}
                   fill="none"
                   viewBox="0 0 24 24"
@@ -115,7 +123,7 @@ const Navbar = ({ onOpenModal }) => {
               >
                 SERVICIOS
               </a>
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-vet-primary to-vet-accent transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-linear-to-r from-vet-primary to-vet-accent transition-all duration-300 group-hover:w-full"></span>
             </li>
             <li className="group relative">
               <a
@@ -124,7 +132,7 @@ const Navbar = ({ onOpenModal }) => {
               >
                 NOSOTRAS
               </a>
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-vet-primary to-vet-accent transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-linear-to-r from-vet-primary to-vet-accent transition-all duration-300 group-hover:w-full"></span>
             </li>
             <li className="group relative">
               <a
@@ -133,7 +141,7 @@ const Navbar = ({ onOpenModal }) => {
               >
                 CONTACTO
               </a>
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-vet-primary to-vet-accent transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-linear-to-r from-vet-primary to-vet-accent transition-all duration-300 group-hover:w-full"></span>
             </li>
           </ul>
 
@@ -159,7 +167,11 @@ const Navbar = ({ onOpenModal }) => {
                   className={`
                     absolute inset-0 w-5 h-5 text-vet-text
                     transition-all duration-500
-                    ${isDark ? "rotate-90 opacity-0 scale-0" : "rotate-0 opacity-100 scale-100"}
+                    ${
+                      isDark
+                        ? "rotate-90 opacity-0 scale-0"
+                        : "rotate-0 opacity-100 scale-100"
+                    }
                   `}
                   fill="none"
                   viewBox="0 0 24 24"
@@ -175,7 +187,11 @@ const Navbar = ({ onOpenModal }) => {
                   className={`
                     absolute inset-0 w-5 h-5 text-vet-text
                     transition-all duration-500
-                    ${isDark ? "rotate-0 opacity-100 scale-100" : "-rotate-90 opacity-0 scale-0"}
+                    ${
+                      isDark
+                        ? "rotate-0 opacity-100 scale-100"
+                        : "-rotate-90 opacity-0 scale-0"
+                    }
                   `}
                   fill="none"
                   viewBox="0 0 24 24"
@@ -198,7 +214,7 @@ const Navbar = ({ onOpenModal }) => {
                 font-semibold text-sm
                 tracking-tight
                 transition-all duration-300 ease-out
-                hover:bg-vet-accent-hover hover:bg-vet-accent/80
+             hover:bg-vet-accent/80
                 hover:scale-105
                 hover:shadow-[0_8px_24px_rgba(233,128,116,0.4)]
                 dark:hover:shadow-[0_8px_24px_rgba(243,156,146,0.4)]
@@ -243,7 +259,11 @@ const Navbar = ({ onOpenModal }) => {
         <div
           className={`
             lg:hidden overflow-hidden transition-all duration-500 ease-out
-            ${isMobileMenuOpen ? "max-h-96 opacity-100 mt-6" : "max-h-0 opacity-0"}
+            ${
+              isMobileMenuOpen
+                ? "max-h-96 opacity-100 mt-6"
+                : "max-h-0 opacity-0"
+            }
           `}
         >
           <ul className="flex flex-col gap-4 pb-6">
@@ -290,7 +310,7 @@ const Navbar = ({ onOpenModal }) => {
                   font-semibold text-sm
                   tracking-tight
                   transition-all duration-300 ease-out
-                  hover:bg-vet-accent-hover hover:bg-vet-accent/80
+                  hover:bg-vet-accent/80
                   hover:shadow-[0_8px_24px_rgba(233,128,116,0.4)]
                   dark:hover:shadow-[0_8px_24px_rgba(243,156,146,0.4)]
                   active:scale-95

@@ -6,7 +6,7 @@ import Footer from "./components/FooterSection/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import { ThemeProvider } from "./context/ThemeContext";
 import WhatsappBtn from "./components/WhatsappBtn/WhatsappBtn";
-
+import ModalHelp from "./components/WhatsappBtn/ModalHelp";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,9 +22,8 @@ function App() {
 
       {!isModalOpen && <WhatsappBtn onOpenHelp={() => setIsHelpOpen(true)} />}
 
-       <ModalHelp isOpen={isHelpOpen} onClose={() => setIsHelpOpen(false)} />
-      <Footer/>
-
+      <ModalHelp isOpen={isHelpOpen} onClose={() => setIsHelpOpen(false)} />
+      <Footer />
     </ThemeProvider>
   );
 }

@@ -68,7 +68,7 @@ function Footer() {
   };
 
   return (
-    <footer className="w-full p-6 bg-[var(--color-vet-bg)] text-[var(--color-vet-text)]">
+    <footer className="w-full p-6 bg-vet-bg text-vet-text">
       {/* Parte superior */}
       <div className="flex flex-col md:flex-row justify-between gap-6 max-w-6xl mx-auto w-full">
         {/* Columna 1 */}
@@ -80,7 +80,7 @@ function Footer() {
                 key={red.id}
                 href={red.url}
                 icon={red.icon}
-                className="transition-all duration-300 opacity-80 hover:opacity-100 hover:scale-110 hover:text-[var(--color-vet-accent)]"
+                className="transition-all duration-300 opacity-80 hover:opacity-100 hover:scale-110 hover:text-vet-accent"
               />
             ))}
           </div>
@@ -93,7 +93,7 @@ function Footer() {
             {categorias.map((cat, index) => (
               <li
                 key={index}
-                className="cursor-pointer hover:text-[var(--color-vet-accent)] transition-colors"
+                className="cursor-pointer hover:text-vet-accent transition-colors"
               >
                 {cat}
               </li>
@@ -106,23 +106,23 @@ function Footer() {
           <h4 className="text-base font-semibold">Contactanos</h4>
           <a
             href="tel:542617170005"
-            className="flex items-center gap-2 transition-colors hover:text-[var(--color-vet-accent)] group"
+            className="flex items-center gap-2 transition-colors hover:text-vet-accent group"
           >
             <FaPhoneAlt size={16} />
-            <span>541177170005</span>
+            <span>+541177170005</span>
           </a>
           <a
             href="https://wa.me/542617170005"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 transition-colors hover:text-[var(--color-vet-accent)] group"
+            className="flex items-center gap-2 transition-colors hover:text-vet-accent group"
           >
             <FaWhatsapp size={16} />
-            <span>1177170005</span>
+            <span>+1177170005</span>
           </a>
           <a
             href="mailto:contactos@adapets.com"
-            className="flex items-center gap-2 transition-colors hover:text-[var(--color-vet-accent)] group"
+            className="flex items-center gap-2 transition-colors hover:text-vet-accent group"
           >
             <FaEnvelope size={16} />
             <span className="truncate">contactos@adapets.com</span>
@@ -131,17 +131,17 @@ function Footer() {
             href="https://www.google.com/maps/search/?api=1&query=Tucuman+1851+Capital+Federal+Buenos+Aires"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-start gap-2 transition-colors hover:text-[var(--color-vet-accent)] group"
+            className="flex items-start gap-2 transition-colors hover:text-vet-accent group"
           >
             {/* Agregamos mt-1 para que el icono se alinee con el primer renglón */}
-            <FaMapMarkerAlt size={16} className="mt-1 flex-shrink-0" />
+            <FaMapMarkerAlt size={16} className="mt-1 shrink-0" />
 
             <div className="flex flex-col leading-tight text-left">
               {/* Quitamos la clase de color fija para que herede el hover del padre */}
-              <span className="font-semibold transition-colors group-hover:text-[var(--color-vet-accent)]">
+              <span className="font-semibold transition-colors group-hover:text-vet-accent">
                 Tucumán 1851
               </span>
-              <span className="text-xs text-[var(--color-vet-text-muted)] transition-colors group-hover:text-[var(--color-vet-accent)]">
+              <span className="text-xs text-muted transition-colors group-hover:text-vet-accent">
                 Capital Federal, Buenos Aires
               </span>
             </div>
@@ -163,23 +163,23 @@ function Footer() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="
-                  border border-[var(--color-vet-gray)]
+                  border border-vet-gray
                   bg-transparent
                   rounded
                   px-3 py-2
-                  text-[var(--color-vet-text)]
-                  placeholder:text-[var(--color-vet-text-muted)]
+                  text-vet-text
+                  placeholder:text-muted
                   focus:outline-none
                   focus:ring-1
-                  focus:ring-[var(--color-vet-accent)]
+                  focus:ring-vet-accent
                 "
             />
 
             <button
               type="submit"
               className="
-                  bg-[var(--color-vet-accent)]
-                  hover:bg-[var(--color-vet-accent-hover)]
+                  bg-vet-accent
+                  hover:bg-vet-accent-hover
                   text-white
                   font-bold
                   py-2
@@ -193,9 +193,7 @@ function Footer() {
             </button>
 
             {mensaje && (
-              <p className="text-sm font-medium text-[var(--color-vet-accent)]">
-                {mensaje}
-              </p>
+              <p className="text-sm font-medium text-vet-accent">{mensaje}</p>
             )}
           </form>
         </div>
@@ -227,7 +225,7 @@ function Footer() {
         </div>
 
         <div className="flex flex-col items-center gap-1">
-          <p className="text-[var(--color-vet-text-muted)] font-medium tracking-wide">
+          <p className="text-muted font-medium tracking-wide">
             © 2026 - ADAPets | Todos los derechos reservados
           </p>
           {/* Referencia al código del cliente para facilitar soporte/admin */}
