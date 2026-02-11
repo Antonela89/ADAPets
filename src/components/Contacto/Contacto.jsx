@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { emailRegex } from '@/constants';
+import { BsSend } from 'react-icons/bs';
 
 const Contacto = () => {
 	// Estado para manejar los datos del formulario
@@ -77,9 +78,10 @@ const Contacto = () => {
 	const titleContactSectionClass =
 		'bg-vet-primary uppercase w-full max-w-4xl text-center text-2xl text-vet-dark py-3 font-extrabold tracking-wide rounded-sm shadow-sm';
 
-	const formContactClass = 'w-full max-w-2xl flex flex-col gap-5 mt-8';
+	const formContactClass =
+		'w-full max-w-2xl flex flex-col gap-5 mt-8 items-center';
 
-	const formGroupClass = 'flex flex-col gap-1.5';
+	const formGroupClass = 'w-full flex flex-col gap-1.5';
 
 	const formLabelClass =
 		'text-vet-surface dark:text-vet-text font-medium ml-1';
@@ -92,12 +94,15 @@ const Contacto = () => {
 	const successMessageClass =
 		'mt-4 p-3 bg-green-100 border border-green-400 text-green-700 text-center rounded-md animate-pulse';
 
-	const buttonClass = `w-full p-3 rounded-md font-bold text-lg mt-4 transition-all duration-300 shadow-md 
+	const buttonClass = `w-1/3 p-3 rounded-md font-bold text-lg mt-4 transition-all duration-300 transition-all duration-300 ease-out
+                bg-vet-accent flex items-center gap-4 justify-center group relative
     ${
 		isSending
 			? 'bg-gray-400 cursor-not-allowed opacity-70' // Estilo deshabilitado
-			: 'bg-vet-accent hover:bg-vet-accent-hover text-white active:scale-[0.98] cursor-pointer' // Estilo activo
+			: 'hover:bg-vet-accent-hover hover:scale-[1.04] hover:shadow-[0_16px_40px_rgba(233,128,116,0.45)] active:scale-95 cursor-pointer' // Estilo activo
 	}`;
+
+	const spanButton = 'transition-transform duration-300 group-hover:translate-x-2';
 
 	return (
 		<section className={contactSectionClass}>
@@ -173,6 +178,9 @@ const Contacto = () => {
 					className={buttonClass}
 				>
 					Enviar
+					<span className={spanButton}>
+						<BsSend />
+					</span>
 				</button>
 
 				{/* Mensaje de Éxito */}
