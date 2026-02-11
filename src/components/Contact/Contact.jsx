@@ -73,10 +73,10 @@ const Contact = () => {
 	// Use esta manera porque sino tenemos que cambiar la configuracion de Tailwind para agregar clases dinamicas, y esto es mas sencillo y limpio para este caso puntual, ademas de que no se repiten las clases en el codigo JSX
 
 	const contactSectionClass =
-		'w-full flex flex-col items-center justify-center p-6 bg-vet-dark transition-colors duration-300';
+		'w-full flex flex-col items-center justify-center p-6 bg-vet-bg transition-colors duration-300';
 
 	const titleContactSectionClass =
-		'bg-vet-primary uppercase w-full max-w-4xl text-center text-2xl text-vet-dark py-3 font-extrabold tracking-wide rounded-sm shadow-sm';
+		'bg-vet-primary uppercase w-full max-w-4xl text-center text-3xl text-vet-text py-3 font-extrabold tracking-wide rounded-sm shadow-sm';
 
 	const formContactClass =
 		'w-full max-w-2xl flex flex-col gap-5 mt-8 items-center';
@@ -84,10 +84,10 @@ const Contact = () => {
 	const formGroupClass = 'w-full flex flex-col gap-1.5';
 
 	const formLabelClass =
-		'text-vet-surface dark:text-vet-text font-medium ml-1';
+		'text-vet-surface dark:text-vet-gray font-medium ml-1';
 
 	const formInputClass =
-		'w-full p-3 rounded-md outline-none border transition-all bg-vet-bg text-accent placeholder-vet-gray/50';
+		'w-full p-3 rounded-md outline-none border transition-all bg-vet-dark text-vet-text placeholder-vet-gray/50';
 
 	const errorClass = 'text-red-400 text-xs mt-1 ml-1 font-medium';
 
