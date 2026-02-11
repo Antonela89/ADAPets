@@ -4,7 +4,8 @@ const Layout = ({ children }) => {
   return (
     <>
       <Navbar />
-      <main className="my-5">{children}</main>
+      {/* {se cambio my-5 por mb-5 para que el hero quede pegado al navbar} */}
+      <main className="mb-5">{children}</main>
       <Footer />
     </>
   );
