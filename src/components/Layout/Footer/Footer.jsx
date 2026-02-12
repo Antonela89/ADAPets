@@ -52,7 +52,8 @@ function Footer() {
 		<footer
 			className="
         w-full p-6
-        bg-vet-dark/95
+        bg-vet-dark
+		opacity-95
         backdrop-blur-xl
         transition-all duration-500
         text-vet-text"
