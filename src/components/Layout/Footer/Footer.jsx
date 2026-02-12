@@ -49,7 +49,15 @@ function Footer() {
 	};
 
 	return (
-		<footer className="w-full p-6 bg-vet-bg text-vet-text">
+		<footer
+			className="
+        w-full p-6
+        bg-vet-dark
+		opacity-95
+        backdrop-blur-xl
+        transition-all duration-500
+        text-vet-text"
+		>
 			{/* Parte superior */}
 			<div className="flex flex-col md:flex-row justify-between gap-6 max-w-6xl mx-auto w-full">
 				{/* Columna 1 */}
@@ -203,7 +211,7 @@ function Footer() {
 			{/* Parte inferior */}
 			<div className="mt-4 flex flex-col items-center gap-6 text-sm border-t border-white/5 pt-8">
 				{/* Separador Animado Minimalista */}
-				<Divider />
+				<Divider footer/>
 
 				<div className="flex flex-col items-center gap-1">
 					<p className="text-muted font-medium tracking-wide">

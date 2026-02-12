@@ -17,6 +17,10 @@
 
   --font-fredoka: "Fredoka", sans-serif;
   --font-quicksand: "Quicksand", sans-serif;
+  
+  /* Sombras */
+  --shadow-glow-dark: 0 0 20px 10px var(--color-vet-dark);
+  --shadow-glow-bg: 0 0 20px 10px var(--color-vet-bg);
 }
 
 /* Dark mode color overrides */
