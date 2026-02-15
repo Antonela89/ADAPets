@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 const ModalHero = ({ isOpen, onClose }) => {
-  // Estado inicial para reutilizar al resetear
   const initialState = {
     tutor: "",
     mascota: "",
@@ -14,6 +13,14 @@ const ModalHero = ({ isOpen, onClose }) => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+ 
+  const isValid = 
+    form.tutor.trim() !== "" && 
+    form.mascota.trim() !== "" && 
+    form.tipo !== "Tipo de consulta" && 
+    form.fecha !== "" &&
+    Object.keys(errors).every(key => !errors[key]);
+
   useEffect(() => {
     const handleEsc = (e) => {
       if (e.key === "Escape") onClose();
@@ -22,7 +29,6 @@ const ModalHero = ({ isOpen, onClose }) => {
     return () => window.removeEventListener("keydown", handleEsc);
   }, [onClose]);
 
-  // Resetear cuando el modal se cierra
   useEffect(() => {
     if (!isOpen) {
       setForm(initialState);
@@ -73,11 +79,9 @@ const ModalHero = ({ isOpen, onClose }) => {
     e.preventDefault();
     if (validate()) {
       setIsSubmitting(true);
-      
-      // Simulación de envío
       setTimeout(() => {
         setIsSubmitting(false);
-        setForm(initialState); // Resetear datos tras éxito
+        setForm(initialState);
         onClose();
         alert("¡Solicitud enviada! Nos vemos pronto en ADA Pets 🐾");
       }, 2000);
@@ -88,10 +92,7 @@ const ModalHero = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex">
-      <div
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-        onClick={onClose}
-      />
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
 
       <div className="relative ml-auto w-full md:w-1/2 h-full bg-vet-bg p-8 md:p-12 animate-slide-in overflow-y-auto">
         <div className="flex justify-between items-center mb-8">
@@ -171,8 +172,11 @@ const ModalHero = ({ isOpen, onClose }) => {
 
           <button
             type="submit"
-            disabled={isSubmitting}
-            className="w-full bg-vet-accent text-vet-text p-4 rounded-md font-semibold hover:bg-vet-accent-hover transition-all flex justify-center items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={isSubmitting || !isValid}
+            className={`w-full p-4 rounded-md font-semibold transition-all flex justify-center items-center gap-2 
+              ${!isValid || isSubmitting 
+                ? "bg-gray-300 text-gray-500 cursor-not-allowed opacity-70" 
+                : "bg-vet-accent text-vet-text hover:bg-vet-accent-hover active:scale-95 shadow-md"}`}
           >
             {isSubmitting && (
               <svg className="animate-spin h-5 w-5 text-vet-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
