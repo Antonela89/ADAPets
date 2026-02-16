@@ -12,7 +12,6 @@ import {
   Contact
 } from "@/components";
 
-
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isHelpOpen, setIsHelpOpen] = useState(false);

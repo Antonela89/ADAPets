@@ -1,25 +1,21 @@
-import { useState, useEffect } from "react";
-
+import { useState, useEffect } from 'react';
 import {
-  FaInstagram,
-  FaFacebook,
-  FaTiktok,
-  FaPhoneAlt,
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaWhatsapp,
-} from "react-icons/fa";
-
-import Button from "./Button";
-
-import "./Footer.css";
-
-import { emailRegex, categorias, mediosPago } from "@/constants";
+	FaInstagram,
+	FaFacebook,
+	FaTiktok,
+	FaPhoneAlt,
+	FaEnvelope,
+	FaMapMarkerAlt,
+	FaWhatsapp,
+} from 'react-icons/fa';
+import Button from './Button';
+import Divider from '../../Divider/Divider';
+import { emailRegex, categorias, mediosPago } from '@/constants';
 
 const redes = [
-  { id: 1, url: "https://instagram.com", icon: <FaInstagram size={28} /> },
-  { id: 2, url: "https://facebook.com", icon: <FaFacebook size={28} /> },
-  { id: 3, url: "https://tiktok.com", icon: <FaTiktok size={28} /> },
+	{ id: 1, url: 'https://instagram.com', icon: <FaInstagram size={28} /> },
+	{ id: 2, url: 'https://facebook.com', icon: <FaFacebook size={28} /> },
+	{ id: 3, url: 'https://tiktok.com', icon: <FaTiktok size={28} /> },
 ];
 
 function Footer() {
@@ -166,11 +162,11 @@ function Footer() {
                   focus:ring-1
                   focus:ring-vet-accent
                 "
-            />
+						/>
 
-            <button
-              type="submit"
-              className="
+						<button
+							type="submit"
+							className="
                   bg-vet-accent
                   hover:bg-vet-accent-hover
                   text-white
@@ -181,54 +177,52 @@ function Footer() {
                   shadow-md
                   hover:shadow-lg
                 "
-            >
-              Unirme ahora
-            </button>
+						>
+							Unirme ahora
+						</button>
 
-            {mensaje && (
-              <p className="text-sm font-medium text-vet-accent">{mensaje}</p>
-            )}
-          </form>
-        </div>
+						{mensaje && (
+							<p className="text-sm font-medium text-vet-accent">
+								{mensaje}
+							</p>
+						)}
+					</form>
+				</div>
 
-        {/* Columna 5 */}
-        <div className="flex flex-col gap-3 flex-1">
-          <h4 className="text-base font-semibold">Medios de pago</h4>
+				{/* Columna 5 */}
+				<div className="flex flex-col gap-3 flex-1">
+					<h4 className="text-base font-semibold">Medios de pago</h4>
 
-          <div className="flex flex-wrap gap-3 items-center">
-            {mediosPago.map((medio) => (
-              <img
-                key={medio.id}
-                src={medio.img}
-                alt={medio.alt}
-                className="h-8 object-contain"
-              />
-            ))}
-          </div>
-        </div>
-      </div>
+					<div className="flex flex-wrap gap-3 items-center">
+						{mediosPago.map((medio) => (
+							<img
+								key={medio.id}
+								src={medio.img}
+								alt={medio.alt}
+								className="h-8 object-contain"
+							/>
+						))}
+					</div>
+				</div>
+			</div>
 
-      {/* Parte inferior */}
-      <div className="mt-4 flex flex-col items-center gap-6 text-sm border-t border-white/5 pt-8">
-        {/* Separador Animado Minimalista */}
-        <div className="professional-divider">
-          <div className="divider-line" />
-          <div className="divider-accent" />
-          <div className="divider-icon">🐾</div>
-        </div>
+			{/* Parte inferior */}
+			<div className="mt-4 flex flex-col items-center gap-6 text-sm border-t border-white/5 pt-8">
+				{/* Separador Animado Minimalista */}
+				<Divider footer/>
 
-        <div className="flex flex-col items-center gap-1">
-          <p className="text-muted font-medium tracking-wide">
-            © 2026 - ADAPets | Todos los derechos reservados
-          </p>
-          {/* Referencia al código del cliente para facilitar soporte/admin */}
-          <span className="text-[10px] opacity-40 uppercase tracking-widest">
-            Client Code: ADP-2026-AR
-          </span>
-        </div>
-      </div>
-    </footer>
-  );
+				<div className="flex flex-col items-center gap-1">
+					<p className="text-muted font-medium tracking-wide">
+						© 2026 - ADAPets | Todos los derechos reservados
+					</p>
+					{/* Referencia al código del cliente para facilitar soporte/admin */}
+					<span className="text-[10px] opacity-40 uppercase tracking-widest">
+						Client Code: ADP-2026-AR
+					</span>
+				</div>
+			</div>
+		</footer>
+	);
 }
 
 export default Footer;
