@@ -19,141 +19,139 @@ const redes = [
 ];
 
 function Footer() {
-	const [email, setEmail] = useState('');
-	const [mensaje, setMensaje] = useState('');
-	useEffect(() => {
-		if (mensaje) {
-			const timer = setTimeout(() => {
-				setMensaje('');
-			}, 3000);
+  const [email, setEmail] = useState("");
+  const [mensaje, setMensaje] = useState("");
+  useEffect(() => {
+    if (mensaje) {
+      const timer = setTimeout(() => {
+        setMensaje("");
+      }, 3000);
 
-			return () => clearTimeout(timer);
-		}
-	}, [mensaje]);
+      return () => clearTimeout(timer);
+    }
+  }, [mensaje]);
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-		if (!email) {
-			setMensaje('Por favor ingresá un email');
-			return;
-		}
+    if (!email) {
+      setMensaje("Por favor ingresá un email");
+      return;
+    }
 
-		if (!emailRegex.test(email)) {
-			setMensaje('Ingresá un email válido (ej: nombre@email.com)');
-			return;
-		}
+    if (!emailRegex.test(email)) {
+      setMensaje("Ingresá un email válido (ej: nombre@email.com)");
+      return;
+    }
 
-		setMensaje('💚¡Gracias por suscribirte! 💚');
-		setEmail('');
-	};
+    setMensaje("💚¡Gracias por suscribirte! 💚");
+    setEmail("");
+  };
 
-	return (
-		<footer
-			className="
+  return (
+    <footer
+      className="
         w-full p-6
-        bg-vet-dark
-		opacity-95
+        bg-vet-dark/95
         backdrop-blur-xl
         transition-all duration-500
-        text-vet-text"
-		>
-			{/* Parte superior */}
-			<div className="flex flex-col md:flex-row justify-between gap-6 max-w-6xl mx-auto w-full">
-				{/* Columna 1 */}
-				<div className="flex flex-col gap-2 flex-1">
-					<h4 className="text-base font-semibold">Seguinos</h4>
-					<div className="flex gap-4">
-						{redes.map((red) => (
-							<Button
-								key={red.id}
-								href={red.url}
-								icon={red.icon}
-								className="transition-all duration-300 opacity-80 hover:opacity-100 hover:scale-110 hover:text-vet-accent"
-							/>
-						))}
-					</div>
-				</div>
+        text-vet-text
+      "
+    >
+      {/* Parte superior */}
+      <div className="flex flex-col md:flex-row justify-between gap-6 max-w-6xl mx-auto w-full">
+        {/* Columna 1 */}
+        <div className="flex flex-col gap-2 flex-1">
+          <h4 className="text-base font-semibold">Seguinos</h4>
+          <div className="flex gap-4">
+            {redes.map((red) => (
+              <Button
+                key={red.id}
+                href={red.url}
+                icon={red.icon}
+                className="transition-all duration-300 opacity-80 hover:opacity-100 hover:scale-110 hover:text-vet-accent"
+              />
+            ))}
+          </div>
+        </div>
 
-				{/* Columna 2 */}
-				<div className="flex flex-col gap-2 flex-1">
-					<h4 className="text-base font-semibold">Categorías</h4>
-					<ul className="flex flex-col gap-1 text-sm">
-						{categorias.map((cat, index) => (
-							<li
-								key={index}
-								className="cursor-pointer hover:text-vet-accent transition-colors"
-							>
-								{cat}
-							</li>
-						))}
-					</ul>
-				</div>
+        {/* Columna 2 */}
+        <div className="flex flex-col gap-2 flex-1">
+          <h4 className="text-base font-semibold">Categorías</h4>
+          <ul className="flex flex-col gap-1 text-sm">
+            {categorias.map((cat, index) => (
+              <li
+                key={index}
+                className="cursor-pointer hover:text-vet-accent transition-colors"
+              >
+                {cat}
+              </li>
+            ))}
+          </ul>
+        </div>
 
-				{/* Columna 3 */}
-				<div className="flex flex-col gap-3 flex-1 text-sm">
-					<h4 className="text-base font-semibold">Contactanos</h4>
-					<a
-						href="tel:542617170005"
-						className="flex items-center gap-2 transition-colors hover:text-vet-accent group"
-					>
-						<FaPhoneAlt size={16} />
-						<span>+541177170005</span>
-					</a>
-					<a
-						href="https://wa.me/542617170005"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="flex items-center gap-2 transition-colors hover:text-vet-accent group"
-					>
-						<FaWhatsapp size={16} />
-						<span>+1177170005</span>
-					</a>
-					<a
-						href="mailto:contactos@adapets.com"
-						className="flex items-center gap-2 transition-colors hover:text-vet-accent group"
-					>
-						<FaEnvelope size={16} />
-						<span className="truncate">contactos@adapets.com</span>
-					</a>
-					<a
-						href="https://www.google.com/maps/search/?api=1&query=Tucuman+1851+Capital+Federal+Buenos+Aires"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="flex items-start gap-2 transition-colors hover:text-vet-accent group"
-					>
-						{/* Agregamos mt-1 para que el icono se alinee con el primer renglón */}
-						<FaMapMarkerAlt size={16} className="mt-1 shrink-0" />
+        {/* Columna 3 */}
+        <div className="flex flex-col gap-3 flex-1 text-sm">
+          <h4 className="text-base font-semibold">Contactanos</h4>
+          <a
+            href="tel:542617170005"
+            className="flex items-center gap-2 transition-colors hover:text-vet-accent group"
+          >
+            <FaPhoneAlt size={16} />
+            <span>+541177170005</span>
+          </a>
+          <a
+            href="https://wa.me/542617170005"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 transition-colors hover:text-vet-accent group"
+          >
+            <FaWhatsapp size={16} />
+            <span>+1177170005</span>
+          </a>
+          <a
+            href="mailto:contactos@adapets.com"
+            className="flex items-center gap-2 transition-colors hover:text-vet-accent group"
+          >
+            <FaEnvelope size={16} />
+            <span className="truncate">contactos@adapets.com</span>
+          </a>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Tucuman+1851+Capital+Federal+Buenos+Aires"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-start gap-2 transition-colors hover:text-vet-accent group"
+          >
+            {/* Agregamos mt-1 para que el icono se alinee con el primer renglón */}
+            <FaMapMarkerAlt size={16} className="mt-1 shrink-0" />
 
-						<div className="flex flex-col leading-tight text-left">
-							{/* Quitamos la clase de color fija para que herede el hover del padre */}
-							<span className="font-semibold transition-colors group-hover:text-vet-accent">
-								Tucumán 1851
-							</span>
-							<span className="text-xs text-muted transition-colors group-hover:text-vet-accent">
-								Capital Federal, Buenos Aires
-							</span>
-						</div>
-					</a>{' '}
-				</div>
+            <div className="flex flex-col leading-tight text-left">
+              {/* Quitamos la clase de color fija para que herede el hover del padre */}
+              <span className="font-semibold transition-colors group-hover:text-vet-accent">
+                Tucumán 1851
+              </span>
+              <span className="text-xs text-muted transition-colors group-hover:text-vet-accent">
+                Capital Federal, Buenos Aires
+              </span>
+            </div>
+          </a>{" "}
+        </div>
 
-				{/* Columna 4 */}
-				<div className="flex flex-col gap-4 flex-1">
-					<h4 className="text-base font-semibold">
-						Suscribite al newsletter
-					</h4>
+        {/* Columna 4 */}
+        <div className="flex flex-col gap-4 flex-1">
+          <h4 className="text-base font-semibold">Suscribite al newsletter</h4>
 
-					<form
-						onSubmit={handleSubmit}
-						noValidate
-						className="flex flex-col gap-3"
-					>
-						<input
-							type="email"
-							placeholder="Email"
-							value={email}
-							onChange={(e) => setEmail(e.target.value)}
-							className="
+          <form
+            onSubmit={handleSubmit}
+            noValidate
+            className="flex flex-col gap-3"
+          >
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="
                   border border-vet-gray
                   bg-transparent
                   rounded
