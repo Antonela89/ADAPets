@@ -6,6 +6,7 @@ import WhatsappBtn from "./WhatsappBtn/WhatsappBtn";
 import Contact from "./Contact/Contact";
 import Services from "./Services/Services";
 import Background from "./Background/Background";
+import About from "./About/About";
 
 export {
   HeroSection,
@@ -16,4 +17,5 @@ export {
   Contact,
   Services,
   Background,
+  About,
 };
