@@ -11,6 +11,7 @@ import {
   ModalHelp,
   Contact,
   Services,
+  About,
 } from "@/components";
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
         <HeroSection onOpenModal={() => setIsModalOpen(true)} />
 
         <ModalHero isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+
+        <About />
 
         <Services />
 
