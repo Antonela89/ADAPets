@@ -1,4 +1,4 @@
-import { FaPaw } from "react-icons/fa"; // Importacion de la patita
+import { FaPaw } from "react-icons/fa"; 
 import './Divider.css';
 
 const Divider = ({footer = false}) => {

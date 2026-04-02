@@ -2,18 +2,18 @@ import { motion } from "framer-motion";
 import { fromLeft, cardVariant } from "../../utils/animations";
 
 const petImages = [
-  "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?q=80&w=800&auto=format&fit=crop", // Golden
-  "https://images.unsplash.com/photo-1527362950785-f487a7c1fe48?q=80&w=800&auto=format&fit=crop", // Cat
-  "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=800&auto=format&fit=crop", // Dog close up
-  "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=800&auto=format&fit=crop", // Cat 2
-  "https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=800&auto=format&fit=crop", // Dog with tongue out
+  "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?q=80&w=800&auto=format&fit=crop", 
+  "https://images.unsplash.com/photo-1527362950785-f487a7c1fe48?q=80&w=800&auto=format&fit=crop", 
+  "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=800&auto=format&fit=crop", 
+  "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=800&auto=format&fit=crop", 
+  "https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=800&auto=format&fit=crop", 
 ];
 
 const PetShopSection = () => {
   return (
     <section className="w-full py-24 px-6 md:px-12 overflow-hidden flex items-center justify-center relative z-10 transition-colors duration-300">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24 w-full">
-        {/* Left Side: Text and Button */}
+        
         <motion.div
           className="w-full lg:w-1/2 flex flex-col gap-8"
           variants={fromLeft(0.2)}
@@ -21,12 +21,14 @@ const PetShopSection = () => {
           whileInView="whileInView"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <div className="flex flex-col gap-4">
-            <span className="text-vet-primary font-bold uppercase tracking-widest text-sm flex items-center gap-2">
+          <div className="flex flex-col gap-4 mb-2">
+            <div className="flex items-center gap-2">
               <span className="w-8 h-1 bg-vet-primary rounded-full"></span>
-              Pet Shop
-            </span>
-            <h2 className="text-5xl md:text-6xl font-fredoka font-bold text-vet-dark leading-[1.1] transition-colors duration-300">
+              <span className="text-vet-primary font-bold uppercase tracking-widest text-sm font-quicksand">
+                PET SHOP
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-fredoka font-bold text-vet-dark leading-[1.1] transition-colors duration-300">
               Nutrición y bienestar para tu{" "}
               <span className="text-vet-accent">mejor amigo</span>
             </h2>
@@ -52,14 +54,14 @@ const PetShopSection = () => {
           </div>
         </motion.div>
 
-        {/* Right Side: Staggered Images */}
+        
         <motion.div
           className="w-full lg:w-1/2 relative h-[500px] md:h-[600px] flex justify-center items-center gap-4 md:gap-6"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          {/* Column 1 */}
+          
           <div className="flex flex-col gap-4 md:gap-6 mt-20">
             <motion.img
               src={petImages[0]}
@@ -77,7 +79,7 @@ const PetShopSection = () => {
             />
           </div>
 
-          {/* Column 2 */}
+          
           <div className="flex flex-col gap-4 md:gap-6 pb-20">
             <motion.img
               src={petImages[2]}
@@ -95,7 +97,7 @@ const PetShopSection = () => {
             />
           </div>
 
-          {/* Column 3 */}
+          
           <div className="flex flex-col gap-4 md:gap-6 mt-10">
             <motion.img
               src={petImages[4]}
@@ -106,7 +108,7 @@ const PetShopSection = () => {
             />
           </div>
 
-          {/* Decorative Elements */}
+          
           <div className="absolute -z-10 bg-vet-primary/10 w-96 h-96 rounded-full blur-3xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
           <div className="absolute -z-10 bg-vet-accent/10 w-72 h-72 rounded-full blur-3xl bottom-0 right-0"></div>
         </motion.div>

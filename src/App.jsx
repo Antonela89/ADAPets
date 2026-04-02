@@ -22,7 +22,7 @@ function App() {
 
   return (
     <ThemeProvider>
-      <Layout>
+      <Layout onOpenModal={() => setIsModalOpen(true)}>
         <HeroSection onOpenModal={() => setIsModalOpen(true)} />
 
         <ModalHero isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

@@ -1,4 +1,4 @@
-/* Animacion linea */
+
 .professional-divider {
     position: relative;
     width: 100%;
@@ -10,7 +10,7 @@
     margin: 20px auto;
 }
 
-/* Línea base muy sutil */
+
 .divider-line {
     position: absolute;
     width: 100%;
@@ -20,19 +20,19 @@
             transparent 0%,
             var(--color-vet-gray) 20%,
             var(--color-vet-gray) 42%,
-            /* La línea llega hasta aquí */
+            
             transparent 42%,
-            /* Hueco transparente */
+            
             transparent 58%,
-            /* Hueco transparente */
+            
             var(--color-vet-gray) 58%,
-            /* La línea retoma aquí */
+            
             var(--color-vet-gray) 80%,
             transparent 100%);
     opacity: 0.3;
 }
 
-/* El destello que recorre la línea */
+
 .divider-accent {
     position: absolute;
     width: 150px;
@@ -46,7 +46,7 @@
     animation: sweep-move 4s linear infinite;
 }
 
-/* El icono central */
+
 .divider-icon {
     position: relative;
     z-index: 10;
@@ -72,10 +72,10 @@
     transform: translateY(-4px) rotate(15deg);
 }
 
-/* Animaciones */
+
 @keyframes sweep-move {
 
-    /* La línea recorre de -250px a 250px de forma constante */
+    
     0% {
         transform: translateX(-250px);
         opacity: 0;

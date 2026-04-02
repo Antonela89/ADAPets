@@ -47,7 +47,7 @@ const ModalHelp = ({ isOpen, onClose }) => {
       />
 
       <div className="relative bg-vet-bg w-full md:w-100 h-[85vh] md:h-150 flex flex-col rounded-t-2xl md:rounded-2xl shadow-2xl animate-fade-in-up overflow-hidden">
-        {/* HEADER */}
+        
         <div className="flex items-center justify-between p-4 bg-vet-primary text-white shadow-md z-10">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-xl backdrop-blur-sm">
@@ -84,9 +84,9 @@ const ModalHelp = ({ isOpen, onClose }) => {
           </button>
         </div>
 
-        {/* CHAT AREA */}
+        
         <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-[#e5ddd5] relative">
-          {/* Background Pattern Overlay */}
+          
           <div className="absolute inset-0 opacity-5 pointer-events-none bg-[url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')] bg-repeat" />
 
           {messages.map((msg, index) => (
@@ -116,7 +116,7 @@ const ModalHelp = ({ isOpen, onClose }) => {
           <div ref={messagesEndRef} />
         </div>
 
-        {/* INPUT AREA */}
+        
         <form
           onSubmit={handleSendMessage}
           className="p-3 bg-vet-bg border-t border-vet-gray/20 flex gap-2 z-20"

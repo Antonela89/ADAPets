@@ -26,7 +26,7 @@ const CommentCard = ({ comment }) => {
 
   return (
     <div className="bg-vet-bg dark:bg-vet-dark/20 p-8 rounded-[2rem] shadow-sm hover:shadow-xl transition-all duration-300 border border-vet-primary/10 flex flex-col gap-4 relative overflow-hidden group min-w-[300px] w-[85vw] md:w-[400px] max-w-sm shrink-0">
-      {/* Decorative Paw */}
+      
       <FaPaw className="absolute -bottom-4 -right-4 text-7xl text-vet-primary/5 group-hover:text-vet-primary/10 transition-colors duration-300 rotate-12" />
 
       <div className="flex justify-between items-start">
@@ -72,33 +72,37 @@ const CommentCard = ({ comment }) => {
 };
 
 const CommentsSection = () => {
-  // Duplicar datos para flujo infinito
+  
   const carouselData = [...commentsData, ...commentsData];
 
   return (
     <section className="w-full py-24 transition-colors duration-300 relative overflow-hidden">
       <div className="max-w-[100vw] mx-auto flex flex-col gap-16 relative z-10">
-        {/* Header (Centrado y con padding para no tocar bordes en móviles) */}
-        <div className="flex flex-col items-center text-center gap-4 px-6 md:px-12">
-          <motion.h2
-            {...fromBottom(0.2)}
-            className="text-4xl md:text-5xl lg:text-6xl font-fredoka font-bold text-vet-dark leading-tight transition-colors duration-300"
-          >
+        
+        <motion.div 
+          className="flex flex-col items-center text-center gap-4 px-6 md:px-12 mb-4"
+          {...fromBottom(0.2)}
+        >
+          <div className="flex items-center justify-center gap-2">
+            <span className="w-8 h-1 bg-vet-primary rounded-full"></span>
+            <span className="text-vet-primary font-bold uppercase tracking-widest text-sm font-quicksand">
+              Testimonios
+            </span>
+            <span className="w-8 h-1 bg-vet-primary rounded-full hidden md:block"></span>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-fredoka font-bold text-vet-dark leading-[1.1] transition-colors duration-300">
             Lo que dicen nuestros{" "}
             <span className="text-vet-primary">Clientes</span>
-          </motion.h2>
-          <motion.p
-            {...fromBottom(0.4)}
-            className="text-base md:text-lg text-vet-surface/80 max-w-2xl font-quicksand font-medium"
-          >
+          </h2>
+          <p className="text-lg md:text-xl text-vet-surface/80 max-w-2xl mx-auto font-quicksand font-medium transition-colors duration-300 mt-2">
             El bienestar de las mascotas y la satisfacción de sus dueños son
             nuestra mayor motivación. Descubre sus experiencias.
-          </motion.p>
-        </div>
+          </p>
+        </motion.div>
 
-        {/* Carousel Container */}
+        
         <div className="w-full overflow-hidden flex relative pb-8 pt-4">
-          {/* Sombras difuminadas en los laterales para un efecto elegante (opcional pero recomendado) */}
+          
           <div className="absolute left-0 top-0 bottom-0 w-12 md:w-32 bg-gradient-to-r from-vet-bg to-transparent z-20 pointer-events-none"></div>
           <div className="absolute right-0 top-0 bottom-0 w-12 md:w-32 bg-gradient-to-l from-vet-bg to-transparent z-20 pointer-events-none"></div>
 
@@ -108,7 +112,7 @@ const CommentsSection = () => {
             transition={{
               repeat: Infinity,
               ease: "linear",
-              duration: 40, // Duración de la animación (más alto = más lento)
+              duration: 40, 
             }}
           >
             {carouselData.map((comment, i) => (

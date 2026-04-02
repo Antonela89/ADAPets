@@ -33,7 +33,6 @@ const Navbar = ({ onOpenModal }) => {
     >
       <nav className="container mx-auto px-6 md:px-16">
         <div className="flex justify-between items-center relative">
-          {/* MOBILE THEME BUTTON */}
           <div className="lg:hidden">
             <button
               onClick={toggleTheme}
@@ -49,7 +48,6 @@ const Navbar = ({ onOpenModal }) => {
               aria-label="Toggle theme"
             >
               <div className="relative w-5 h-5">
-                {/* Sun Icon */}
                 <svg
                   className={`
                     absolute inset-0 w-5 h-5 text-vet-text
@@ -69,7 +67,6 @@ const Navbar = ({ onOpenModal }) => {
                   <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
                 </svg>
 
-                {/* Moon Icon */}
                 <svg
                   className={`
                     absolute inset-0 w-5 h-5 text-vet-text
@@ -91,7 +88,6 @@ const Navbar = ({ onOpenModal }) => {
             </button>
           </div>
 
-          {/* LOGO */}
           <a
             href="/"
             className="flex items-center gap-3 group transition-transform duration-300 hover:scale-105 absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0"
@@ -115,7 +111,6 @@ const Navbar = ({ onOpenModal }) => {
             </div>
           </a>
 
-          {/* DESKTOP MENU */}
           <ul className="hidden lg:flex items-center gap-8">
             {categorias.map((categoria, index) => (
               <li key={index} className="group relative">
@@ -130,9 +125,7 @@ const Navbar = ({ onOpenModal }) => {
             ))}
           </ul>
 
-          {/* THEME TOGGLE + CTA BUTTON */}
           <div className="hidden lg:flex items-center gap-4">
-            {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
               className="
@@ -147,7 +140,6 @@ const Navbar = ({ onOpenModal }) => {
               aria-label="Toggle theme"
             >
               <div className="relative w-5 h-5">
-                {/* Sun Icon */}
                 <svg
                   className={`
                     absolute inset-0 w-5 h-5 text-vet-text
@@ -167,7 +159,6 @@ const Navbar = ({ onOpenModal }) => {
                   <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
                 </svg>
 
-                {/* Moon Icon */}
                 <svg
                   className={`
                     absolute inset-0 w-5 h-5 text-vet-text
@@ -188,7 +179,6 @@ const Navbar = ({ onOpenModal }) => {
               </div>
             </button>
 
-            {/* CTA Button */}
             <button
               onClick={onOpenModal}
               className="
@@ -205,6 +195,7 @@ const Navbar = ({ onOpenModal }) => {
                 dark:hover:shadow-[0_8px_24px_rgba(243,156,146,0.4)]
                 active:scale-95
                 group
+                cursor-pointer
               "
             >
               <span className="flex items-center gap-2">
@@ -216,7 +207,6 @@ const Navbar = ({ onOpenModal }) => {
             </button>
           </div>
 
-          {/* MOBILE HAMBURGER */}
           <button
             onClick={toggleMobileMenu}
             className="lg:hidden flex flex-col gap-1.5 w-8 h-8 justify-center items-center group"
@@ -240,7 +230,6 @@ const Navbar = ({ onOpenModal }) => {
           </button>
         </div>
 
-        {/* MOBILE MENU */}
         <div
           className={`
             lg:hidden overflow-hidden transition-all duration-500 ease-out

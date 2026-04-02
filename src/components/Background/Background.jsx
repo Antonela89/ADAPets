@@ -1,7 +1,7 @@
 import { MdPets } from "react-icons/md";
 import "./Background.css";
 
-// El rastro
+
 const generatePath = (
   baseY,
   amplitude,
@@ -11,40 +11,40 @@ const generatePath = (
   isDog,
 ) => {
   return Array.from({ length: points }).flatMap((_, i) => {
-    const x = (i / points) * 110 - 5; // De -5% a 105% para cubrir bordes
-    // Fórmula de onda: y = centro + amplitud * sin(frecuencia * x)
+    const x = (i / points) * 110 - 5; 
+    
     const y = baseY + Math.sin(i * frequency) * amplitude;
 
-    // Rotación calculada para que la pata "mire" hacia donde camina (tangente)
+    
     const rot = 90 + Math.cos(i * frequency) * 20;
 
-    // PAR de patas (Izquierda y Derecha)
+    
     return [
       {
         id: `p1-${i}`,
         x: x,
-        y: y - (isDog ? 2 : 1), // Pata izquierda (un poco arriba)
+        y: y - (isDog ? 2 : 1), 
         rot: rot,
         delay: i * 0.5 + delayOffset,
       },
       {
         id: `p2-${i}`,
-        x: x + (isDog ? 2 : 1.5), // Pata derecha (un poco adelantada)
-        y: y + (isDog ? 2 : 1), // Pata derecha (un poco abajo)
+        x: x + (isDog ? 2 : 1.5), 
+        y: y + (isDog ? 2 : 1), 
         rot: rot,
-        delay: i * 0.5 + 0.2 + delayOffset, // Desfase de tiempo entre pasos
+        delay: i * 0.5 + 0.2 + delayOffset, 
       },
     ];
   });
 };
 
-const DOG_TRAIL = generatePath(20, 8, 0.4, 15, 0, true); // Rastro arriba (Perro)
-const CAT_TRAIL = generatePath(75, 6, 0.5, 18, 2, false); // Rastro abajo (Gato)
+const DOG_TRAIL = generatePath(20, 8, 0.4, 15, 0, true); 
+const CAT_TRAIL = generatePath(75, 6, 0.5, 18, 2, false); 
 
 const Background = () => {
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
-      {/* Renderizado de rastro de Perro */}
+      
       {DOG_TRAIL.map((p) => (
         <MdPets
           key={p.id}
@@ -59,7 +59,7 @@ const Background = () => {
         />
       ))}
 
-      {/* Renderizado de rastro de Gato */}
+      
       {CAT_TRAIL.map((p) => (
         <MdPets
           key={p.id}

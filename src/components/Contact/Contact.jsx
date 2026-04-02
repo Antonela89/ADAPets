@@ -58,15 +58,24 @@ const Contact = () => {
   return (
     <section className="section" id="Contacto">
       <div className="wrapperSection">
-        <motion.h2
-          className="titleSection"
-          initial={{ opacity: 0, y: -24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+        <motion.div
+           initial={{ opacity: 0, y: -24 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: false, amount: 0.3 }}
+           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+           className="flex flex-col items-center text-center gap-4 mb-16"
         >
-          Contacto
-        </motion.h2>
+          <div className="flex items-center justify-center gap-2">
+            <span className="w-8 h-1 bg-vet-primary rounded-full"></span>
+            <span className="text-vet-primary font-bold uppercase tracking-widest text-sm font-quicksand">
+              Escríbenos
+            </span>
+            <span className="w-8 h-1 bg-vet-primary rounded-full hidden md:block"></span>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-fredoka font-bold text-vet-dark leading-[1.1] transition-colors duration-300">
+            Formulario de <span className="text-vet-primary">Contacto</span>
+          </h2>
+        </motion.div>
 
         <div className="contact-grid">
           <motion.div className="formContact" {...fromLeft(0)}>

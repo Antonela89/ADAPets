@@ -1,13 +1,12 @@
 import { Navbar, Footer } from "./index";
 import { Background } from "@/components";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, onOpenModal }) => {
   return (
     <>
-      {/* Fondo fijo global — se muestra detrás de toda la página */}
       <Background />
 
-      <Navbar />
+      <Navbar onOpenModal={onOpenModal} />
       <main>{children}</main>
       <Footer />
     </>

@@ -58,9 +58,9 @@ function Footer() {
         text-vet-text
       "
     >
-      {/* Parte superior */}
+      
       <div className="flex flex-col md:flex-row justify-between gap-6 max-w-6xl mx-auto w-full">
-        {/* Columna 1 */}
+        
         <div className="flex flex-col gap-2 flex-1">
           <h4 className="text-base font-semibold">Seguinos</h4>
           <div className="flex gap-4">
@@ -75,7 +75,7 @@ function Footer() {
           </div>
         </div>
 
-        {/* Columna 2 */}
+        
         <div className="flex flex-col gap-2 flex-1">
           <h4 className="text-base font-semibold">Categorías</h4>
           <ul className="flex flex-col gap-1 text-sm">
@@ -90,7 +90,7 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Columna 3 */}
+        
         <div className="flex flex-col gap-3 flex-1 text-sm">
           <h4 className="text-base font-semibold">Contactanos</h4>
           <a
@@ -122,11 +122,11 @@ function Footer() {
             rel="noopener noreferrer"
             className="flex items-start gap-2 transition-colors hover:text-vet-accent group"
           >
-            {/* Agregamos mt-1 para que el icono se alinee con el primer renglón */}
+            
             <FaMapMarkerAlt size={16} className="mt-1 shrink-0" />
 
             <div className="flex flex-col leading-tight text-left">
-              {/* Quitamos la clase de color fija para que herede el hover del padre */}
+              
               <span className="font-semibold transition-colors group-hover:text-vet-accent">
                 Tucumán 1851
               </span>
@@ -137,7 +137,7 @@ function Footer() {
           </a>{" "}
         </div>
 
-        {/* Columna 4 */}
+        
         <div className="flex flex-col gap-4 flex-1">
           <h4 className="text-base font-semibold">Suscribite al newsletter</h4>
 
@@ -189,7 +189,7 @@ function Footer() {
 					</form>
 				</div>
 
-				{/* Columna 5 */}
+				
 				<div className="flex flex-col gap-3 flex-1">
 					<h4 className="text-base font-semibold">Medios de pago</h4>
 
@@ -206,16 +206,16 @@ function Footer() {
 				</div>
 			</div>
 
-			{/* Parte inferior */}
+			
 			<div className="mt-4 flex flex-col items-center gap-6 text-sm border-t border-white/5 pt-8">
-				{/* Separador Animado Minimalista */}
+				
 				<Divider footer/>
 
 				<div className="flex flex-col items-center gap-1">
 					<p className="text-muted font-medium tracking-wide">
 						© 2026 - ADAPets | Todos los derechos reservados
 					</p>
-					{/* Referencia al código del cliente para facilitar soporte/admin */}
+					
 					<span className="text-[10px] opacity-40 uppercase tracking-widest">
 						Client Code: ADP-2026-AR
 					</span>

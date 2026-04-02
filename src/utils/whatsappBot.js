@@ -48,7 +48,7 @@ export const getBotResponse = (input) => {
     return "Nuestro horario de atención es de Lunes a Sábados de 9:00 a 20:00 hs. Urgencias las 24hs. ⏰";
   }
 
-  // Detectar respuesta del usuario con datos (nombre, mascota, etc)
+  
   if (
     (lowerInput.includes("nombre") ||
       lowerInput.includes("soy") ||

@@ -1,7 +1,12 @@
 import { useRef, useEffect } from "react";
 import { motion } from "motion/react";
 import heroVideo from "@/assets/Video-Hero/Hero-Video.mp4";
-import { heroSlowZoom, heroLineGrow, fromLeft, fromBottom } from "@/utils/animations";
+import {
+  heroSlowZoom,
+  heroLineGrow,
+  fromLeft,
+  fromBottom,
+} from "@/utils/animations";
 
 const HeroSection = ({ onOpenModal }) => {
   const videoRef = useRef(null);
@@ -22,37 +27,55 @@ const HeroSection = ({ onOpenModal }) => {
   }, []);
 
   return (
-    <section className="relative h-screen w-full flex items-center overflow-hidden bg-vet-bg">
-      <motion.div className="absolute inset-0 z-0" {...heroSlowZoom}>
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src={heroVideo} type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-vet-primary/40 mix-blend-multiply" />
-      </motion.div>
+    <section className="relative h-screen w-full flex items-center overflow-hidden bg-transparentl">
+      <svg width="0" height="0" className="absolute">
+        <defs>
+          <clipPath id="hero-wave-clip" clipPathUnits="objectBoundingBox">
+            <path d="M 1,0 L 0,0 L 0,0.90 C 0.35,0.80 0.65,1.0 1,0.90 Z" />
+          </clipPath>
+        </defs>
+      </svg>
 
       <div
-        className="absolute inset-0 z-10 bg-vet-dark/70 hidden md:block"
-        style={{ clipPath: "polygon(0 0, 45% 0, 30% 100%, 0% 100%)" }}
-      />
-      <div className="absolute inset-0 z-10 bg-vet-dark/85 md:hidden" />
+        className="absolute inset-0 z-0 w-full h-full pointer-events-none"
+        style={{ clipPath: "url(#hero-wave-clip)" }}
+      >
+        <motion.div className="absolute inset-0 z-0" {...heroSlowZoom}>
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src={heroVideo} type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-vet-primary/40 mix-blend-multiply" />
+        </motion.div>
+
+        <div className="absolute inset-0 z-10 bg-gradient-to-r from-vet-dark/95 via-vet-dark/60 to-transparent hidden md:block" />
+        <div className="absolute inset-0 z-10 bg-vet-dark/80 md:hidden" />
+      </div>
 
       <div className="relative z-20 container px-6 md:px-16">
         <div className="flex flex-col items-start max-w-xl">
           <motion.h1
             className="text-vet-primary text-5xl sm:text-7xl md:text-8xl lg:text-9xl mb-6"
-            style={{ fontFamily: "'Fredoka', sans-serif", fontWeight: 600, letterSpacing: "-0.01em" }}
+            style={{
+              fontFamily: "'Fredoka', sans-serif",
+              fontWeight: 600,
+              letterSpacing: "-0.01em",
+            }}
             {...fromLeft(0)}
           >
             ADA
             <span
               className="text-gray-400"
-              style={{ fontFamily: "'Quicksand', sans-serif", fontWeight: 600, letterSpacing: "-0.04em" }}
+              style={{
+                fontFamily: "'Quicksand', sans-serif",
+                fontWeight: 600,
+                letterSpacing: "-0.04em",
+              }}
             >
               Pets
             </span>
@@ -68,7 +91,9 @@ const HeroSection = ({ onOpenModal }) => {
               {...fromLeft(0.2)}
             >
               Tu Cuidado{" "}
-              <span className="font-serif italic text-vet-primary">Su Bienestar.</span>
+              <span className="font-serif italic text-vet-primary">
+                Su Bienestar.
+              </span>
             </motion.p>
           </div>
 
@@ -80,7 +105,7 @@ const HeroSection = ({ onOpenModal }) => {
             para la alegría de tu hogar.
           </motion.p>
 
-          <motion.div className="mt-12 md:mt-24" {...fromBottom(0.6)}>
+          <motion.div className="mt-10 md:mt-24" {...fromBottom(0.6)}>
             <motion.button
               onClick={onOpenModal}
               whileHover={{ scale: 1.04 }}
@@ -97,7 +122,9 @@ const HeroSection = ({ onOpenModal }) => {
             >
               <span className="flex items-center gap-4">
                 Solicitar Cita
-                <span className="transition-transform duration-300 group-hover:translate-x-2">→</span>
+                <span className="transition-transform duration-300 group-hover:translate-x-2">
+                  →
+                </span>
               </span>
             </motion.button>
           </motion.div>

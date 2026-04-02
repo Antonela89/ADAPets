@@ -2,7 +2,7 @@
 
 @layer utilities {
 
-  /* ─── Sección ─────────────────────────────────────────────────────────── */
+  
   .section {
     @apply relative w-full flex flex-col items-center justify-center p-6
            transition-colors duration-300 min-h-screen overflow-hidden;
@@ -12,7 +12,7 @@
     @apply relative z-10 w-full flex flex-col items-center;
   }
 
-  /* ─── Título ──────────────────────────────────────────────────────────── */
+  
   .titleSection {
     background-color: color-mix(
       in srgb,
@@ -24,7 +24,7 @@
            shadow-sm;
   }
 
-  /* ─── Grid de 2 columnas ──────────────────────────────────────────────── */
+  
   .contact-grid {
     @apply w-full max-w-5xl grid grid-cols-1 lg:grid-cols-2;
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -35,7 +35,7 @@
     overflow: hidden;
   }
 
-  /* ─── Formulario ──────────────────────────────────────────────────────── */
+  
   .formContact {
     @apply flex flex-col gap-5 items-center p-8
            bg-vet-bg/5 backdrop-blur-[5px];
@@ -73,7 +73,7 @@
     @apply transition-transform duration-300 group-hover:translate-x-2;
   }
 
-  /* ─── Panel del Mapa ──────────────────────────────────────────────────── */
+  
   .contact-map-wrapper {
     @apply flex flex-col gap-3 p-6 bg-vet-dark/30 backdrop-blur-sm
            border-l-0 lg:border-l border-white/10;
@@ -120,7 +120,7 @@
     letter-spacing: 0.03em;
   }
 
-  /* ─── Blobs decorativos de fondo ─────────────────────────────────────── */
+  
   .contact-bg-blob {
     @apply absolute rounded-full pointer-events-none;
     filter: blur(80px);
