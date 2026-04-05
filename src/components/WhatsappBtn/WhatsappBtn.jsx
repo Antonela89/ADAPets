@@ -5,7 +5,11 @@ const WhatsappBtn = ({ onOpenHelp }) => {
     <button
       type="button"
       onClick={onOpenHelp}
-      className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-50 transition-transform duration-500 hover:scale-110 active:scale-95 animate-float group"
+      style={{
+        bottom: "max(1.5rem, env(safe-area-inset-bottom))",
+        transform: "translateZ(0)",
+      }}
+      className="fixed right-6 md:right-10 z-50 transition-transform duration-500 hover:scale-110 active:scale-95 animate-float group"
       title="Consultas"
       aria-label="Abrir asistente de consultas"
     >
