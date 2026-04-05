@@ -2,11 +2,12 @@ import BtnFlotante from "@/assets/Boton-Flotante/btn-consultas.png";
 
 const WhatsappBtn = ({ onOpenHelp }) => {
   return (
-    <a
+    <button
+      type="button"
       onClick={onOpenHelp}
-      href="#consultas"
       className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-50 transition-transform duration-500 hover:scale-110 active:scale-95 animate-float group"
       title="Consultas"
+      aria-label="Abrir asistente de consultas"
     >
       <div className="absolute bottom-full right-0 mb-3 w-max animate-pulse">
         <div className="bg-white text-vet-primary font-bold text-sm py-2 px-4 rounded-xl shadow-xl relative border-2 border-vet-primary/20">
@@ -22,7 +23,7 @@ const WhatsappBtn = ({ onOpenHelp }) => {
           className="relative w-16 h-16 object-contain"
         />
       </div>
-    </a>
+    </button>
   );
 };
 

@@ -36,6 +36,6 @@
   body {
     @apply bg-vet-bg text-vet-surface transition-colors duration-300;
     font-family: "Roboto", sans-serif;
-    height: 100vh;
+    min-height: 100vh;
   }
 }
